@@ -1,14 +1,16 @@
-plugin.tx_taste_frontend {
+plugin.tx_taste {
 	view {
-		templateRootPaths.0 = EXT:taste/Resources/Private/Templates/
-		templateRootPaths.1 = {$plugin.tx_taste_frontend.view.templateRootPath}
 		partialRootPaths.0 = EXT:taste/Resources/Private/Partials/
-		partialRootPaths.1 = {$plugin.tx_taste_frontend.view.partialRootPath}
+		partialRootPaths.1 = {$plugin.tx_taste.view.partialRootPath}
+
+		templateRootPaths.0 = EXT:taste/Resources/Private/Templates/
+		templateRootPaths.1 = {$plugin.tx_taste.view.templateRootPath}
+
 		layoutRootPaths.0 = EXT:taste/Resources/Private/Layouts/
-		layoutRootPaths.1 = {$plugin.tx_taste_frontend.view.layoutRootPath}
+		layoutRootPaths.1 = {$plugin.tx_taste.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_taste_frontend.persistence.storagePid}
+		storagePid = {$plugin.tx_taste.persistence.storagePid}
 		#recursive = 1
 	}
 	features {
