@@ -1,0 +1,14 @@
+plugin.tx_taste_frontend {
+    view {
+        # cat=plugin.tx_taste_frontend/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:taste/Resources/Private/Templates/
+        # cat=plugin.tx_taste_frontend/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:taste/Resources/Private/Partials/
+        # cat=plugin.tx_taste_frontend/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:taste/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_taste_frontend//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
