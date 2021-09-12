@@ -8,7 +8,7 @@ $tmpPageColumns = [
 		'config' => [
 			'type' => 'text',
 			'enableRichtext' => true,
-			'richtextConfiguration' => 'default',
+			'richtextConfiguration' => 'xoMinimal',
 			'fieldControl' => [
 				'fullScreenRichtext' => [
 					'disabled' => false,
@@ -22,4 +22,4 @@ $tmpPageColumns = [
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tmpPageColumns);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'miscellaneous', 'tx_taste_abstract_long', 'after:no_search');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette('pages', 'xoTaste', '--linebreak--, tx_taste_abstract_long,', 'after:abstract');
