@@ -11,7 +11,14 @@ plugin.tx_taste {
 	}
 
 	persistence {
+
 		# cat=plugin.tx_taste//a; type=string; label=Default storage PID
 		storagePid =
+	}
+
+	settings {
+
+		# cat=plugin.tx_taste//a; type=string; label=UIDs of parent categories for badges (categories)
+		badgeParentCategories = 145, 146, 147
 	}
 }

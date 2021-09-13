@@ -21,4 +21,8 @@ plugin.tx_taste {
 	mvc {
 		#callDefaultActionIfActionCantBeResolved = 1
 	}
+
+	settings {
+		badgeParentCategories = {$plugin.tx_taste.settings.badgeParentCategories}
+	}
 }
