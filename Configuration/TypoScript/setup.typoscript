@@ -26,3 +26,38 @@ plugin.tx_taste {
 		badgeParentCategories = {$plugin.tx_taste.settings.badgeParentCategories}
 	}
 }
+
+plugin.tx_xo.settings.modules {
+	taste {
+		pictureSettings {
+			fiftyFifty {
+				maxWidth = 560
+				cropVariant = default
+				mediaQueries {
+					0 {
+						maxHeight = 560
+						cropVariant = default
+						mediaQuery = (min-width: 0px)
+					}
+				}
+			}
+
+			card {
+				width = 530
+				cropVariant = thumbnail
+				mediaQueries {
+					576 {
+						width = 360
+						cropVariant = thumbnail
+						mediaQuery = (min-width: 576px)
+					}
+					0 {
+						width = 530
+						cropVariant = thumbnail
+						mediaQuery = (min-width: 0px)
+					}
+				}
+			}
+		}
+	}
+}
