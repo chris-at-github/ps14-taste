@@ -30,12 +30,12 @@ plugin.tx_taste {
 plugin.tx_xo.settings.modules {
 	taste {
 		pictureSettings {
-			fiftyFifty {
-				maxWidth = 560
+			aside {
+				width = 740
 				cropVariant = default
 				mediaQueries {
 					0 {
-						maxHeight = 560
+						width = 740
 						cropVariant = default
 						mediaQuery = (min-width: 0px)
 					}
