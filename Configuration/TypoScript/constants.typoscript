@@ -19,6 +19,6 @@ plugin.tx_taste {
 	settings {
 
 		# cat=plugin.tx_taste//a; type=string; label=UIDs of parent categories for badges (categories)
-		badgeParentCategories = 145, 146, 147
+		badgeParentCategories = 141, 157, 145, 149, 166, 162
 	}
 }
