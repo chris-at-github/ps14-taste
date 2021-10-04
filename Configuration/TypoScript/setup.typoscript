@@ -1,16 +1,16 @@
-plugin.tx_taste {
+plugin.tx_teaser {
 	view {
-		partialRootPaths.0 = EXT:taste/Resources/Private/Partials/
-		partialRootPaths.1 = {$plugin.tx_taste.view.partialRootPath}
+		partialRootPaths.0 = EXT:teaser/Resources/Private/Partials/
+		partialRootPaths.1 = {$plugin.tx_teaser.view.partialRootPath}
 
-		templateRootPaths.0 = EXT:taste/Resources/Private/Templates/
-		templateRootPaths.1 = {$plugin.tx_taste.view.templateRootPath}
+		templateRootPaths.0 = EXT:teaser/Resources/Private/Templates/
+		templateRootPaths.1 = {$plugin.tx_teaser.view.templateRootPath}
 
-		layoutRootPaths.0 = EXT:taste/Resources/Private/Layouts/
-		layoutRootPaths.1 = {$plugin.tx_taste.view.layoutRootPath}
+		layoutRootPaths.0 = EXT:teaser/Resources/Private/Layouts/
+		layoutRootPaths.1 = {$plugin.tx_teaser.view.layoutRootPath}
 	}
 	persistence {
-		storagePid = {$plugin.tx_taste.persistence.storagePid}
+		storagePid = {$plugin.tx_teaser.persistence.storagePid}
 		#recursive = 1
 	}
 	features {
@@ -23,12 +23,12 @@ plugin.tx_taste {
 	}
 
 	settings {
-		badgeParentCategories = {$plugin.tx_taste.settings.badgeParentCategories}
+		badgeParentCategories = {$plugin.tx_teaser.settings.badgeParentCategories}
 	}
 }
 
 plugin.tx_xo.settings.modules {
-	taste {
+	teaser {
 		pictureSettings {
 			aside {
 				width = 740

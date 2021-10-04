@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Ps14\Taste\Domain\Model;
+namespace Ps14\Teaser\Domain\Model;
 
 
 use Ps\Xo\Domain\Model\Category;
@@ -10,7 +10,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
- * This file is part of the "Ps14 Taste" Extension for TYPO3 CMS.
+ * This file is part of the "Ps14 Teaser" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
@@ -80,7 +80,7 @@ class Page extends \Ps\Xo\Domain\Model\Page {
 	public function getSettings() {
 		return GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Configuration\ConfigurationManager::class)->getConfiguration(
 			\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
-			'taste'
+			'teaser'
 		);
 	}
 }

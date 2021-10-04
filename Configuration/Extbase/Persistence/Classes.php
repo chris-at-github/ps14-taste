@@ -2,11 +2,11 @@
 declare(strict_types=1);
 
 return [
-	\Ps14\Taste\Domain\Model\Page::class => [
+	\Ps14\Teaser\Domain\Model\Page::class => [
 		'tableName' => 'pages',
 		'properties' => [
 			'abstractLong' => [
-				'fieldName' => 'tx_taste_abstract_long'
+				'fieldName' => 'tx_teaser_abstract_long'
 			],
 		]
 	],

@@ -1,24 +1,24 @@
-plugin.tx_taste {
+plugin.tx_teaser {
 	view {
-		# cat=plugin.tx_taste/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:taste/Resources/Private/Layouts/
+		# cat=plugin.tx_teaser/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:teaser/Resources/Private/Layouts/
 
-		# cat=plugin.tx_taste/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:taste/Resources/Private/Templates/
+		# cat=plugin.tx_teaser/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:teaser/Resources/Private/Templates/
 
-		# cat=plugin.tx_taste/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:taste/Resources/Private/Partials/
+		# cat=plugin.tx_teaser/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:teaser/Resources/Private/Partials/
 	}
 
 	persistence {
 
-		# cat=plugin.tx_taste//a; type=string; label=Default storage PID
+		# cat=plugin.tx_teaser//a; type=string; label=Default storage PID
 		storagePid =
 	}
 
 	settings {
 
-		# cat=plugin.tx_taste//a; type=string; label=UIDs of parent categories for badges (categories)
+		# cat=plugin.tx_teaser//a; type=string; label=UIDs of parent categories for badges (categories)
 		badgeParentCategories = 141, 157, 145, 149, 166, 162
 	}
 }

@@ -1,5 +1,5 @@
 {
-    "name": "ps14/taste",
+    "name": "ps14/teaser",
     "type": "typo3-cms-extension",
     "description": "",
     "authors": [
@@ -17,16 +17,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Ps14\\Taste\\": "Classes"
+            "Ps14\\Teaser\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Ps14\\Taste\\Tests\\": "Tests"
+            "Ps14\\Teaser\\Tests\\": "Tests"
         }
     },
     "replace": {
-        "typo3-ter/taste": "self.version"
+        "typo3-ter/teaser": "self.version"
     },
     "config": {
         "vendor-dir": ".Build/vendor",
@@ -41,7 +41,7 @@
         "typo3/cms": {
             "cms-package-dir": "{$vendor-dir}/typo3/cms",
             "web-dir": ".Build/public",
-            "extension-key": "taste"
+            "extension-key": "teaser"
         }
     }
 }
