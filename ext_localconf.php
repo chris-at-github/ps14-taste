@@ -14,24 +14,9 @@ call_user_func(static function() {
 		]
 	);
 
-	// wizards
+	// PageTs
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-		'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    teaser_frontend {
-                        iconIdentifier = teaser-plugin-frontend
-                        title = LLL:EXT:teaser/Resources/Private/Language/locallang_db.xlf:tx_teaser_frontend.name
-                        description = LLL:EXT:teaser/Resources/Private/Language/locallang_db.xlf:tx_teaser_frontend.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = teaser_frontend
-                        }
-                    }
-                }
-                show = *
-            }
-       }'
+		'<INCLUDE_TYPOSCRIPT: source="FILE:EXT:teaser/Configuration/TSConfig/Page.t3s">'
 	);
 
 	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);

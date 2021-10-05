@@ -1,0 +1,16 @@
+mod {
+	wizards.newContentElement.wizardItems.plugins {
+		elements {
+			teaser_frontend {
+				iconIdentifier = teaser-plugin-frontend
+				title = LLL:EXT:teaser/Resources/Private/Language/locallang_tca.xlf:tx_teaser_frontend.name
+				description = LLL:EXT:teaser/Resources/Private/Language/locallang_tca.xlf:tx_teaser_frontend.description
+				tt_content_defValues {
+					CType = list
+					list_type = teaser_frontend
+				}
+			}
+		}
+		show = *
+	}
+}

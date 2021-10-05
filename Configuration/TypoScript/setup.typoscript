@@ -1,13 +1,14 @@
 plugin.tx_teaser {
 	view {
-		partialRootPaths.0 = EXT:teaser/Resources/Private/Partials/
-		partialRootPaths.1 = {$plugin.tx_teaser.view.partialRootPath}
+		layoutRootPaths.0 = EXT:teaser/Resources/Private/Layouts/
+		layoutRootPaths.1 = {$plugin.tx_teaser.view.layoutRootPath}
 
 		templateRootPaths.0 = EXT:teaser/Resources/Private/Templates/
 		templateRootPaths.1 = {$plugin.tx_teaser.view.templateRootPath}
 
-		layoutRootPaths.0 = EXT:teaser/Resources/Private/Layouts/
-		layoutRootPaths.1 = {$plugin.tx_teaser.view.layoutRootPath}
+		partialRootPaths.10 = EXT:teaser/Resources/Private/Partials/
+		partialRootPaths.15 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
+		partialRootPaths.20 = {$plugin.tx_teaser.view.partialRootPath}
 	}
 	persistence {
 		storagePid = {$plugin.tx_teaser.persistence.storagePid}
@@ -28,7 +29,18 @@ plugin.tx_teaser {
 }
 
 plugin.tx_xo.settings.modules {
+	ce_icon_text {
+
+	}
+}
+
+plugin.tx_xo.settings.modules {
 	teaser {
+		layouts {
+			default = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.default
+			aside = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
+		}
+
 		pictureSettings {
 			aside {
 				width = 740
@@ -61,3 +73,5 @@ plugin.tx_xo.settings.modules {
 		}
 	}
 }
+
+module.tx_xo.settings.modules.teaser < plugin.tx_xo.settings.modules.teaser

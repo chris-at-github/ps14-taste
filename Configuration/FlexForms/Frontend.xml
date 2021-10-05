@@ -1,0 +1,98 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<main>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.sheet.main</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.layout>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.teaser.layouts</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.layout>
+					<settings.source>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.source</label>
+							<onChange>reload</onChange>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.categories</numIndex>
+										<numIndex index="1">categories</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</numIndex>
+										<numIndex index="1">pages</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.source>
+					<settings.categories>
+						<TCEforms>
+							<label>LLL:EXT:entity_product/Resources/Private/Language/locallang_plugin.xlf:flexform.field.categories</label>
+							<displayCond>FIELD:main.settings.source:=:categories</displayCond>
+							<config>
+								<type>select</type>
+								<foreign_table>sys_category</foreign_table>
+								<renderType>selectTree</renderType>
+								<size>15</size>
+								<treeConfig>
+									<appearance>
+										<expandAll>0</expandAll>
+										<showHeader>1</showHeader>
+									</appearance>
+									<parentField>parent</parentField>
+								</treeConfig>
+							</config>
+						</TCEforms>
+					</settings.categories>
+					<settings.pages>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</label>
+							<displayCond>FIELD:main.settings.source:=:pages</displayCond>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>4</size>
+								<minitems>0</minitems>
+								<maxitems>99</maxitems>
+							</config>
+						</TCEforms>
+					</settings.pages>
+					<settings.readmoreEnabled>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.readmoreEnabled</label>
+							<config>
+								<type>check</type>
+								<default>1</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.readmoreEnabled>
+				</el>
+			</ROOT>
+		</main>
+	</sheets>
+</T3DataStructure>

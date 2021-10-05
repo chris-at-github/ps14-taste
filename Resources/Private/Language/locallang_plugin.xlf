@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:entity_product/Resources/Private/Language/locallang_plugin" date="2020-11-22T22:22:51Z" product-name="entity_product">
+		<header/>
+		<body>
+			<trans-unit id="tx_teaser_frontend.name">
+				<source>Teaser Frontend</source>
+			</trans-unit>
+			<trans-unit id="tx_teaser_frontend.description">
+				<source></source>
+			</trans-unit>
+
+			<trans-unit id="flexform.field.layout" resname="flexform.field.layout">
+				<source>Layout</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.layout.default" resname="flexform.field.layout.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.layout.aside" resname="flexform.field.layout.aside">
+				<source>Image / Text</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.source" resname="flexform.field.source">
+				<source>Source</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.categories" resname="flexform.field.categories">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.pages" resname="flexform.field.pages">
+				<source>Pages</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.readmoreEnabled" resname="flexform.field.readmoreEnabled">
+				<source>Use load more</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
