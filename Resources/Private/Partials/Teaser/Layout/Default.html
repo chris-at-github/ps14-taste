@@ -2,7 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
 
-	<f:if condition="{product.applications -> f:count()} > {settings.xo.modules.teaser.readmoreLimit}">
+	<f:if condition="{pages -> f:count()} > {settings.xo.modules.teaser.readmoreLimit}">
 		<f:then>
 			<f:render section="ReadmoreContainer" arguments="{_all}" />
 		</f:then>
@@ -35,7 +35,7 @@
 </f:section>
 
 <f:section name="Item">
-	<f:render partial="Components/Card" section="Media" arguments="{media: page.media, settings: settings.xo.modules.entityproduct.card.pictureSettings.thumbnail}" />
+	<f:render partial="Components/Card" section="Media" arguments="{media: page.media, settings: settings.xo.modules.teaser.pictureSettings.card}" />
 	<f:render partial="Components/Card" section="Badges" arguments="{badges: page.badges}" />
 	<f:render partial="Components/Card" section="Title" arguments="{title: page.title, link: '{f:uri.page(pageUid: page.uid)}'}" />
 </f:section>

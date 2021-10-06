@@ -47,6 +47,10 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 			$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
 		}
 
+		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
+			$options['categories'] = GeneralUtility::trimExplode(',', $this->settings['categories'], true);
+		}
+
 		return $options;
 	}
 
