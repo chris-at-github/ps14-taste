@@ -41,6 +41,8 @@ plugin.tx_xo.settings.modules {
 			aside = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
 		}
 
+		readmoreLimit = 3
+
 		pictureSettings {
 			aside {
 				width = 740
