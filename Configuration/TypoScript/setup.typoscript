@@ -1,14 +1,14 @@
 plugin.tx_teaser {
 	view {
-		layoutRootPaths.0 = EXT:teaser/Resources/Private/Layouts/
-		layoutRootPaths.1 = {$plugin.tx_teaser.view.layoutRootPath}
+		layoutRootPaths.10 = EXT:teaser/Resources/Private/Layouts/
+		layoutRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Layouts/
 
-		templateRootPaths.0 = EXT:teaser/Resources/Private/Templates/
-		templateRootPaths.1 = {$plugin.tx_teaser.view.templateRootPath}
+		templateRootPaths.10 = EXT:teaser/Resources/Private/Templates/
+		templateRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Templates/
 
 		partialRootPaths.10 = EXT:teaser/Resources/Private/Partials/
 		partialRootPaths.15 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
-		partialRootPaths.20 = {$plugin.tx_teaser.view.partialRootPath}
+		partialRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Partials/
 	}
 	persistence {
 		storagePid = {$plugin.tx_teaser.persistence.storagePid}
@@ -28,9 +28,11 @@ plugin.tx_teaser {
 	}
 }
 
-plugin.tx_xo.settings.modules {
-	ce_icon_text {
-
+tt_content.list.dataProcessing.200 {
+	teaser_frontend {
+		importCss {
+			10 = /assets/css/modules/teaser.css
+		}
 	}
 }
 

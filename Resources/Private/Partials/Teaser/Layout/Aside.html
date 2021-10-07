@@ -1,0 +1,68 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+	<f:if condition="{pages -> f:count()} == 1">
+		<f:then>
+			<f:for each="{pages}" as="page">
+				<div class="row teaser teaser--layout-aside">
+					<f:render section="Item" arguments="{page: page, settings: settings}" />
+				</div>
+			</f:for>
+		</f:then>
+		<f:else>
+			<ul>
+				<f:for each="{pages}" as="page">
+					<li class="row teaser teaser--layout-aside">
+						<f:render section="Item" arguments="{page: page, settings: settings}" />
+					</li>
+				</f:for>
+			</ul>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Item">
+	<div class="col-12 col-md-6">
+		<f:render section="Media" arguments="{page: page, settings: settings}" />
+	</div>
+
+	<div class="col-12 col-md-6">
+		<div class="teaser--body">
+			<f:render section="Header" arguments="{page: page, settings: settings}" />
+			<f:render section="Abstract" arguments="{page: page, settings: settings}" />
+			<f:render section="Readmore" arguments="{page: page, settings: settings}" />
+		</div>
+	</div>
+</f:section>
+
+<f:section name="Media">
+	<f:link.page class="teaser--media" pageUid="{page.uid}" tabindex="-1">
+		<f:if condition="{page.media}">
+			<f:render partial="Components/Media" section="Picture" arguments="{
+				file: page.media.originalResource,
+				image: {
+					maxWidth: settings.xo.modules.teaser.pictureSettings.aside.maxWidth,
+					cropVariant: settings.xo.modules.teaser.pictureSettings.aside.cropVariant
+				},
+				sizes: settings.xo.modules.teaser.pictureSettings.aside.mediaQueries
+			}" />
+		</f:if>
+	</f:link.page>
+</f:section>
+
+<f:section name="Header">
+	<header class="teaser--title">
+		<f:link.page pageUid="{page.uid}">{page.title}</f:link.page>
+	</header>
+</f:section>
+
+<f:section name="Abstract">
+	<f:if condition="{page.abstractLong}">
+		<f:format.html>{page.abstractLong}</f:format.html>
+	</f:if>
+</f:section>
+
+<f:section name="Readmore">
+	<f:link.page class="link--cta teaser--readmore" pageUid="{page.uid}" tabindex="-1">{page.title}</f:link.page>
+</f:section>
+</html>

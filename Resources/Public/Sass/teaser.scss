@@ -1,0 +1,85 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Bootstrap & XNA
+@import '../../../../xna/Resources/Public/Sass/functions';
+@import '../../../../xna/Resources/Public/Sass/variables';
+@import '../../../../xna/Resources/Public/Sass/mixins';
+@import '../../../../xna/Resources/Public/Sass/definitions';
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Module
+.teaser {
+	.teaser--media {
+		& {
+			background-image: none;
+		}
+
+		img {
+			@extend %image-responsive;
+		}
+	}
+}
+
+.teaser--layout-aside {
+	.teaser--media {
+		& {
+			display: block;
+			overflow: hidden;
+		}
+
+		img {
+			transition: transform $transition-duration;
+			transform: scale(1.0);
+		}
+
+		&:hover, .focusable &:focus {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	.teaser--title {
+		&, h1, h2, h3, h4 {
+			margin-top: rem(20px);
+			font-weight: $font-weight-normal;
+		}
+
+		a {
+			font-weight: $font-weight-normal;
+		}
+	}
+
+	.teaser--readmore {
+		margin-top: rem(25px);
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// >= 768px
+@include media-breakpoint-up(md) {
+	.teaser--layout-aside {
+		.teaser--title {
+			&, h1, h2, h3, h4 {
+				margin-top: rem(10px);
+				font-size: rem(26px);
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// >= 992px
+@include media-breakpoint-up(lg) {
+	.teaser--layout-aside {
+		.teaser--title {
+			&, h1, h2, h3, h4 {
+				margin-top: rem(15px);
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// XNA Override
+@import '../../../../xna/Resources/Public/Sass/xna/modules/teaser';
