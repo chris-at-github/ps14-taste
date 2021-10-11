@@ -8,6 +8,7 @@ namespace Ps14\Teaser\Controller;
 use Ps14\Teaser\Domain\Model\Page;
 use Ps14\Teaser\Domain\Repository\PageRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
  * This file is part of the "Ps14 Teaser" Extension for TYPO3 CMS.
@@ -41,7 +42,9 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return array
 	 */
 	protected function getDemand($overwrite = []) {
-		$options = [];
+		$options = [
+			'not' => []
+		];
 
 		if($this->settings['source'] === 'pages' && empty($this->settings['pages']) === false) {
 			$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
@@ -50,6 +53,9 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
 			$options['categories'] = GeneralUtility::trimExplode(',', $this->settings['categories'], true);
 		}
+
+		// eigene Seite ausschliessen
+		$options['not']['records'] = [$GLOBALS['TSFE']->id];
 
 		return $options;
 	}
