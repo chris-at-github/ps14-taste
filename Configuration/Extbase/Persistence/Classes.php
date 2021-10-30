@@ -8,6 +8,9 @@ return [
 			'abstractLong' => [
 				'fieldName' => 'tx_teaser_abstract_long'
 			],
+			'teaserTitle' => [
+				'fieldName' => 'tx_teaser_title'
+			],
 		]
 	],
 ];

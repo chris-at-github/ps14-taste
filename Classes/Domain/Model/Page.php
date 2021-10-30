@@ -30,6 +30,11 @@ class Page extends \Ps\Xo\Domain\Model\Page {
 	protected $abstractLong = '';
 
 	/**
+	 * @var string
+	 */
+	protected $teaserTitle = '';
+
+	/**
 	 * @var array
 	 */
 	protected $badges = [];
@@ -82,5 +87,23 @@ class Page extends \Ps\Xo\Domain\Model\Page {
 			\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
 			'teaser'
 		);
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTeaserTitle(): string {
+		if(empty($this->teaserTitle) === true) {
+			return $this->title;
+		}
+
+		return $this->teaserTitle;
+	}
+
+	/**
+	 * @param string $teaserTitle
+	 */
+	public function setTeaserTitle(string $teaserTitle): void {
+		$this->teaserTitle = $teaserTitle;
 	}
 }

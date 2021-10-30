@@ -6,6 +6,9 @@
 			<trans-unit id="tx_teaser_domain_model_page.tx_teaser_abstract_long" resname="tx_teaser_domain_model_page.tx_teaser_abstract_long">
 				<source>Abstract Long</source>
 			</trans-unit>
+			<trans-unit id="tx_teaser_domain_model_page.tx_teaser_title" resname="tx_teaser_domain_model_page.tx_teaser_title">
+				<source>Title</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
