@@ -61,7 +61,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	}
 
 	/**
-	 * @return mixed
+	 * @return null|void
 	 */
 	public function indexAction() {
 		$demand = $this->getDemand();
@@ -76,6 +76,8 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 				return null;
 			});
 		}
+
+		//DebuggerUtility::var_dump($pages);
 
 		$this->settings['xo'] = $this->objectManager->get(\TYPO3\CMS\Extbase\Configuration\ConfigurationManager::class)->getConfiguration(
 			\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
