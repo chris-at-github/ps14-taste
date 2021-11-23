@@ -31,6 +31,18 @@
 			<trans-unit id="flexform.field.readmoreEnabled" resname="flexform.field.readmoreEnabled">
 				<source>Use load more</source>
 			</trans-unit>
+			<trans-unit id="flexform.field.pagesProcessing" resname="flexform.field.pagesProcessing">
+				<source>Processing selected pages</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.pagesProcessing.pages" resname="flexform.field.pagesProcessing.pages">
+				<source>Selected pages</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.pagesProcessing.subpages" resname="flexform.field.pagesProcessing.subpages">
+				<source>Subpages of selected pages</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.hiddenEnabled" resname="flexform.field.hiddenEnabled">
+				<source>Show hidden records</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

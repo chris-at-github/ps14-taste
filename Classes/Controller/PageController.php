@@ -47,7 +47,12 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		];
 
 		if($this->settings['source'] === 'pages' && empty($this->settings['pages']) === false) {
-			$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
+			if($this->settings['pagesProcessing'] === 'subpages') {
+				$options['parent'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
+
+			} else {
+				$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
+			}
 		}
 
 		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
@@ -56,6 +61,11 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 
 		// eigene Seite ausschliessen
 		$options['not']['records'] = [$GLOBALS['TSFE']->id];
+
+		// hide_nav Datensaetze per Default nicht anzeigen
+		if((int) $this->settings['hiddenEnabled'] !== 1) {
+			$options['hiddenEnabled'] = false;
+		}
 
 		return $options;
 	}
@@ -67,7 +77,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		$demand = $this->getDemand();
 		$pages = $this->pageRepository->findAll($this->getDemand());
 
-		if($this->settings['source'] === 'pages') {
+		if($this->settings['source'] === 'pages' && $this->settings['pagesProcessing'] === 'pages') {
 			$pages = \Ps\Xo\Utilities\GeneralUtility::sortIterableByField($pages, $demand['records'], function($value) {
 				if($value instanceof Page) {
 					return $value->getUid();

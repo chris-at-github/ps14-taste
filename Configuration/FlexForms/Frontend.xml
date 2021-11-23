@@ -64,6 +64,26 @@
 							</config>
 						</TCEforms>
 					</settings.categories>
+					<settings.pagesProcessing>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pagesProcessing</label>
+							<displayCond>FIELD:main.settings.source:=:pages</displayCond>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pagesProcessing.pages</numIndex>
+										<numIndex index="1">pages</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pagesProcessing.subpages</numIndex>
+										<numIndex index="1">subpages</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.pagesProcessing>
 					<settings.pages>
 						<TCEforms>
 							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</label>
@@ -93,6 +113,20 @@
 							</config>
 						</TCEforms>
 					</settings.readmoreEnabled>
+					<settings.hiddenEnabled>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.hiddenEnabled</label>
+							<config>
+								<type>check</type>
+								<default>0</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.hiddenEnabled>
 				</el>
 			</ROOT>
 		</main>
