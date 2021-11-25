@@ -100,6 +100,20 @@
 							</config>
 						</TCEforms>
 					</settings.pages>
+					<settings.titleType>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.titleType</label>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.teaser.titleType</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.titleType>
 					<settings.asideAlignment>
 						<TCEforms>
 							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment</label>

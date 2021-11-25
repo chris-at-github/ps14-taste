@@ -55,6 +55,9 @@
 			<trans-unit id="flexform.field.subpagesEnabled" resname="flexform.field.subpagesEnabled">
 				<source>Show subpages</source>
 			</trans-unit>
+			<trans-unit id="flexform.field.titleType" resname="flexform.field.titleType">
+				<source>Title type</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

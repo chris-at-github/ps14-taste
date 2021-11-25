@@ -48,6 +48,14 @@ plugin.tx_xo.settings.modules {
 			right = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment.right
 		}
 
+		titleType {
+			0 = LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value
+			1 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.1
+			2 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.2
+			3 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.3
+			4 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.4
+		}
+
 		readmoreLimit = 3
 
 		pictureSettings {

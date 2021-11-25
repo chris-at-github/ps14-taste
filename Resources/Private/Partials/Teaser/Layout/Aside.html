@@ -58,11 +58,31 @@
 
 <f:section name="Header">
 	<header class="teaser--title">
-		<f:if condition="{page.linkable}">
-			<f:then><f:link.page pageUid="{page.uid}">{page.teaserTitle}</f:link.page></f:then>
-			<f:else>{page.teaserTitle}</f:else>
-		</f:if>
+		<f:switch expression="{settings.titleType}">
+			<f:case value="1">
+				<h1><f:render section="Title" arguments="{page: page, settings: settings}" /></h1>
+			</f:case>
+			<f:case value="2">
+				<h2><f:render section="Title" arguments="{page: page, settings: settings}" /></h2>
+			</f:case>
+			<f:case value="3">
+				<h3><f:render section="Title" arguments="{page: page, settings: settings}" /></h3>
+			</f:case>
+			<f:case value="4">
+				<h4><f:render section="Title" arguments="{page: page, settings: settings}" /></h4>
+			</f:case>
+			<f:defaultCase>
+				<f:render section="Title" arguments="{page: page, settings: settings}" />
+			</f:defaultCase>
+		</f:switch>
 	</header>
+</f:section>
+
+<f:section name="Title">
+	<f:if condition="{page.linkable}">
+		<f:then><f:link.page pageUid="{page.uid}">{page.teaserTitle}</f:link.page></f:then>
+		<f:else>{page.teaserTitle}</f:else>
+	</f:if>
 </f:section>
 
 <f:section name="Abstract">
