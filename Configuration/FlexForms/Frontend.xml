@@ -13,6 +13,7 @@
 					<settings.layout>
 						<TCEforms>
 							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout</label>
+							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
@@ -99,6 +100,21 @@
 							</config>
 						</TCEforms>
 					</settings.pages>
+					<settings.asideAlignment>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment</label>
+							<displayCond>FIELD:main.settings.layout:=:aside</displayCond>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.teaser.asideAlignment</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.asideAlignment>
 					<settings.readmoreEnabled>
 						<TCEforms>
 							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.readmoreEnabled</label>
@@ -127,6 +143,26 @@
 							</config>
 						</TCEforms>
 					</settings.hiddenEnabled>
+					<settings.subpagesEnabled>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesEnabled</label>
+							<displayCond>
+								<AND>
+									<numIndex index="0">FIELD:main.settings.layout:=:aside</numIndex>
+									<numIndex index="1">FIELD:main.settings.source:=:pages</numIndex>
+								</AND>
+							</displayCond>
+							<config>
+								<type>check</type>
+								<default>0</default>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.subpagesEnabled>
 				</el>
 			</ROOT>
 		</main>

@@ -17,7 +17,7 @@
 				<source>Default</source>
 			</trans-unit>
 			<trans-unit id="flexform.field.layout.aside" resname="flexform.field.layout.aside">
-				<source>Image / Text</source>
+				<source>Media | Text</source>
 			</trans-unit>
 			<trans-unit id="flexform.field.source" resname="flexform.field.source">
 				<source>Source</source>
@@ -42,6 +42,18 @@
 			</trans-unit>
 			<trans-unit id="flexform.field.hiddenEnabled" resname="flexform.field.hiddenEnabled">
 				<source>Show hidden records</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.asideAlignment" resname="flexform.field.asideAlignment">
+				<source>Alignment</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.asideAlignment.left" resname="flexform.field.asideAlignment.left">
+				<source>Media | Text</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.asideAlignment.right" resname="flexform.field.asideAlignment.right">
+				<source>Text | Media</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.subpagesEnabled" resname="flexform.field.subpagesEnabled">
+				<source>Show subpages</source>
 			</trans-unit>
 		</body>
 	</file>

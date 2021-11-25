@@ -31,7 +31,9 @@
 			transition: transform $transition-duration;
 			transform: scale(1.0);
 		}
+	}
 
+	a.teaser--media {
 		&:hover, .focusable &:focus {
 			img {
 				transform: scale(1.1);
@@ -42,6 +44,7 @@
 	.teaser--title {
 		&, h1, h2, h3, h4 {
 			margin-top: rem(20px);
+			font-size: rem(22px);
 			font-weight: $font-weight-normal;
 		}
 
@@ -66,6 +69,12 @@
 			}
 		}
 	}
+
+	.teaser--layout-aside-reverse {
+		& {
+			flex-direction: row-reverse;
+		}
+	}
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -75,6 +84,15 @@
 		.teaser--title {
 			&, h1, h2, h3, h4 {
 				margin-top: rem(15px);
+			}
+		}
+
+		.teaser--sub-navigation {
+			ul {
+				display: grid;
+				grid-template-rows: masonry;
+				grid-template-columns: minmax(auto, 50%) minmax(auto, 50%);
+				grid-column-gap: rem(30px);
 			}
 		}
 	}

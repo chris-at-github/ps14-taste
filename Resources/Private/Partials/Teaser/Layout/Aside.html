@@ -4,7 +4,7 @@
 	<f:if condition="{pages -> f:count()} == 1">
 		<f:then>
 			<f:for each="{pages}" as="page">
-				<div class="row teaser teaser--layout-aside">
+				<div class="row teaser teaser--layout-aside {f:if(condition: '{settings.asideAlignment} == \'right\'', then: 'teaser--layout-aside-reverse')}">
 					<f:render section="Item" arguments="{page: page, settings: settings}" />
 				</div>
 			</f:for>
@@ -12,7 +12,7 @@
 		<f:else>
 			<ul>
 				<f:for each="{pages}" as="page">
-					<li class="row teaser teaser--layout-aside">
+					<li class="row teaser teaser--layout-aside {f:if(condition: '{settings.asideAlignment} == \'right\'', then: 'teaser--layout-aside-reverse')}">
 						<f:render section="Item" arguments="{page: page, settings: settings}" />
 					</li>
 				</f:for>
@@ -22,47 +22,69 @@
 </f:section>
 
 <f:section name="Item">
-	<div class="col-12 col-md-6">
-		<f:render section="Media" arguments="{page: page, settings: settings}" />
+	<div class="col-12 col-md-5">
+		<f:render section="MediaContainer" arguments="{page: page, settings: settings.xo.modules.teaser.pictureSettings.aside}" />
 	</div>
 
-	<div class="col-12 col-md-6">
+	<div class="col-12 col-md-7">
 		<div class="teaser--body">
 			<f:render section="Header" arguments="{page: page, settings: settings}" />
 			<f:render section="Abstract" arguments="{page: page, settings: settings}" />
 			<f:render section="Readmore" arguments="{page: page, settings: settings}" />
+			<f:render section="Subpages" arguments="{page: page, settings: settings}" />
 		</div>
 	</div>
 </f:section>
 
+<f:section name="MediaContainer">
+	<f:if condition="{page.linkable}">
+		<f:then><f:link.page pageUid="{page.uid}" class="teaser--media" tabindex="-1"><f:render section="Media" arguments="{page: page, settings: settings}" /></f:link.page></f:then>
+		<f:else><div class="teaser--media"><f:render section="Media" arguments="{page: page, settings: settings}" /></div></f:else>
+	</f:if>
+</f:section>
+
 <f:section name="Media">
-	<f:link.page class="teaser--media" pageUid="{page.uid}" tabindex="-1">
-		<f:if condition="{page.media}">
-			<f:render partial="Components/Media" section="Picture" arguments="{
-				file: page.media.originalResource,
-				image: {
-					maxWidth: settings.xo.modules.teaser.pictureSettings.aside.maxWidth,
-					cropVariant: settings.xo.modules.teaser.pictureSettings.aside.cropVariant
-				},
-				sizes: settings.xo.modules.teaser.pictureSettings.aside.mediaQueries
-			}" />
-		</f:if>
-	</f:link.page>
+	<f:if condition="{page.media}">
+		<f:render partial="Components/Media" section="Picture" arguments="{
+			file: page.media.originalResource,
+			image: {
+				maxWidth: settings.maxWidth,
+				cropVariant: settings.cropVariant
+			},
+			sizes: settings.mediaQueries
+		}" />
+	</f:if>
 </f:section>
 
 <f:section name="Header">
 	<header class="teaser--title">
-		<f:link.page pageUid="{page.uid}">{page.title}</f:link.page>
+		<f:if condition="{page.linkable}">
+			<f:then><f:link.page pageUid="{page.uid}">{page.teaserTitle}</f:link.page></f:then>
+			<f:else>{page.teaserTitle}</f:else>
+		</f:if>
 	</header>
 </f:section>
 
 <f:section name="Abstract">
 	<f:if condition="{page.abstractLong}">
-		<f:format.html>{page.abstractLong}</f:format.html>
+		<f:then>
+			<f:format.html>{page.abstractLong}</f:format.html>
+		</f:then>
+		<f:else if="{page.abstract}">
+			<f:format.html>{page.abstract}</f:format.html>
+		</f:else>
 	</f:if>
 </f:section>
 
 <f:section name="Readmore">
-	<f:link.page class="link--cta teaser--readmore" pageUid="{page.uid}" tabindex="-1">{page.title}</f:link.page>
+	<f:if condition="{page.linkable}">
+		<f:link.page class="link--cta teaser--readmore" pageUid="{page.uid}" tabindex="-1">{page.teaserTitle}</f:link.page>
+	</f:if>
+</f:section>
+
+<f:section name="Subpages">
+	<f:if condition="{settings.subpagesEnabled}">
+		<f:cObject typoscriptObjectPath="block.teaserSubNavigation" data="{parent: page.uid}" />
+	</f:if>
 </f:section>
 </html>
