@@ -87,15 +87,6 @@
 				margin-top: rem(15px);
 			}
 		}
-
-		.teaser--sub-navigation {
-			ul {
-				display: grid;
-				grid-template-rows: masonry;
-				grid-template-columns: minmax(auto, 50%) minmax(auto, 50%);
-				grid-column-gap: rem(30px);
-			}
-		}
 	}
 }
 
