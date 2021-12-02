@@ -28,12 +28,8 @@ plugin.tx_teaser {
 	}
 }
 
-tt_content.list.dataProcessing.200 {
-	teaser_frontend {
-		importCss {
-			10 = /assets/css/modules/teaser.css
-		}
-	}
+tt_content.list.dataProcessing {
+	210 = Ps14\Teaser\DataProcessing\TeaserProcessor
 }
 
 plugin.tx_xo.settings.modules {
