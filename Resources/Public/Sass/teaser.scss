@@ -1,4 +1,9 @@
 // ---------------------------------------------------------------------------------------------------------------------
+// Pre-Define Variables
+$iconfont-create-font-face: false !default;
+$iconfont-create-icon-class: false !default;
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Bootstrap & XNA
 @import '../../../../xna/Resources/Public/Sass/functions';
 @import '../../../../xna/Resources/Public/Sass/variables';
@@ -6,85 +11,91 @@
 @import '../../../../xna/Resources/Public/Sass/definitions';
 @import '../../../../xna/Resources/Public/Sass/xna/iconfont';
 
-
 // ---------------------------------------------------------------------------------------------------------------------
-// Module
-.teaser {
-	.teaser--media {
-		& {
-			background-image: none;
-		}
+// Default-Variablen
+$tx-teaser-frontend--use-css: true !default;
 
-		img {
-			@extend %image-responsive;
-		}
-	}
-}
+@if($tx-teaser-frontend--use-css) {
 
-.teaser--layout-aside {
-	.teaser--media {
-		& {
-			display: block;
-			overflow: hidden;
-		}
+	// ---------------------------------------------------------------------------------------------------------------------
+	// Module
+	.teaser {
+		.teaser--media {
+			& {
+				background-image: none;
+			}
 
-		img {
-			transition: transform $transition-duration;
-			transform: scale(1.0);
-		}
-	}
-
-	a.teaser--media {
-		&:hover, .focusable &:focus {
 			img {
-				transform: scale(1.1);
+				@extend %image-responsive;
 			}
 		}
 	}
 
-	.teaser--title {
-		&, h1, h2, h3, h4 {
-			margin-top: rem(20px);
-			font-size: rem(22px);
-			font-weight: $font-weight-normal;
-		}
-
-		a {
-			font-weight: $font-weight-normal;
-		}
-	}
-
-	.teaser--readmore {
-		margin-top: rem(25px);
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// >= 768px
-@include media-breakpoint-up(md) {
 	.teaser--layout-aside {
+		.teaser--media {
+			& {
+				display: block;
+				overflow: hidden;
+			}
+
+			img {
+				transition: transform $transition-duration;
+				transform: scale(1.0);
+			}
+		}
+
+		a.teaser--media {
+			&:hover, .focusable &:focus {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+
 		.teaser--title {
 			&, h1, h2, h3, h4 {
-				margin-top: rem(10px);
-				font-size: rem(26px);
+				margin-top: rem(20px);
+				font-size: rem(22px);
+				font-weight: $font-weight-normal;
+			}
+
+			a {
+				font-weight: $font-weight-normal;
+			}
+		}
+
+		.teaser--readmore {
+			margin-top: rem(25px);
+		}
+	}
+
+	// ---------------------------------------------------------------------------------------------------------------------
+	// >= 768px
+	@include media-breakpoint-up(md) {
+		.teaser--layout-aside {
+			.teaser--title {
+				&, h1, h2, h3, h4 {
+					margin-top: rem(10px);
+					font-size: rem(26px);
+				}
+			}
+		}
+
+		.teaser--layout-aside-reverse {
+			& {
+				flex-direction: row-reverse;
 			}
 		}
 	}
 
-	.teaser--layout-aside-reverse {
-		& {
-			flex-direction: row-reverse;
-		}
-	}
-}
-
-// ---------------------------------------------------------------------------------------------------------------------
-// >= 992px
-@include media-breakpoint-up(lg) {
-	.teaser--layout-aside {
-		.teaser--title {
-			&, h1, h2, h3, h4 {
-				margin-top: rem(15px);
+	// ---------------------------------------------------------------------------------------------------------------------
+	// >= 992px
+	@include media-breakpoint-up(lg) {
+		.teaser--layout-aside {
+			.teaser--title {
+				&, h1, h2, h3, h4 {
+					margin-top: rem(15px);
+				}
 			}
 		}
 	}
