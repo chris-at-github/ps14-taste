@@ -105,12 +105,6 @@ $tx-teaser-frontend--use-css: true !default;
 	}
 }
 
-@include stylesheet-context($stylesheet-context-print) {
- .ce-teaser-frontend--default {
-	 display: none;
- }
-}
-
 // ---------------------------------------------------------------------------------------------------------------------
 // XNA Override
 @import '../../../../xna/Resources/Public/Sass/xna/modules/teaser';
