@@ -7,6 +7,7 @@ plugin.tx_teaser {
 		templateRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Templates/
 
 		partialRootPaths.10 = EXT:teaser/Resources/Private/Partials/
+		partialRootPaths.14 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Partials/
 		partialRootPaths.15 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
 		partialRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Partials/
 	}

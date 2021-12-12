@@ -96,5 +96,6 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 
 		$this->view->assign('pages', $pages);
 		$this->view->assign('settings', $this->settings);
+		$this->view->assign('record', $this->configurationManager->getContentObject()->data);
 	}
 }
