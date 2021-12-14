@@ -2,7 +2,7 @@
 <f:layout name="Default" />
 <f:section name="Main">
 
-	<f:if condition="{pages -> f:count()} > {settings.xo.modules.teaser.readmoreLimit}">
+	<f:if condition="{pages -> f:count()} > {settings.xo.modules.teaser.readmoreLimit} && {settings.readmoreEnabled} != 0">
 		<f:then>
 			<f:render section="ReadmoreContainer" arguments="{_all}" />
 		</f:then>
