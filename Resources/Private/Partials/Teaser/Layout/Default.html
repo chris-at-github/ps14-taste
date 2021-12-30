@@ -39,7 +39,7 @@
 	<f:render partial="Components/Card" section="Badges" arguments="{badges: page.badges}" />
 
 	<div class="card--body">
-		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, link: '{f:uri.page(pageUid: page.uid)}'}" />
+		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, titleType: settings.titleType, link: '{f:uri.page(pageUid: page.uid)}'}" />
 
 		<f:if condition="{page.abstract}">
 			<f:render partial="Components/Card" section="Description" arguments="{description: page.abstract}" />
