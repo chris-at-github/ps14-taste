@@ -7,6 +7,7 @@ namespace Ps14\Teaser\Controller;
 
 use Ps14\Teaser\Domain\Model\Page;
 use Ps14\Teaser\Domain\Repository\PageRepository;
+use TYPO3\CMS\Core\Database\QueryGenerator as QueryGeneratorAlias;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
@@ -53,6 +54,12 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 			} else {
 				$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
 			}
+		} elseif($this->settings['source'] === 'categories' && empty($this->configurationManager->getContentObject()->data['pages']) === false) {
+			$depth = (int) $this->configurationManager->getContentObject()->data['recursive'];
+			$queryGenerator = GeneralUtility::makeInstance( QueryGeneratorAlias::class);
+
+			$children = $queryGenerator->getTreeList($this->configurationManager->getContentObject()->data['pages'], $depth, 0, 1);
+			$options['parent'] = GeneralUtility::intExplode(',', $children, true);
 		}
 
 		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
