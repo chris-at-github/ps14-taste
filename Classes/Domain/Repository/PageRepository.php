@@ -29,8 +29,8 @@ class PageRepository extends \Ps\Xo\Domain\Repository\PageRepository {
 
 			// Overlay um die korrekte Uebersetzung zu laden -> die Kategorie sind in der Hauptsprache der Seite definiert
 			// @see: https://docs.typo3.org/m/typo3/book-extbasefluid/master/en-us/9-CrosscuttingConcerns/1-localizing-and-internationalizing-an-extension.html#typo3-v9-and-higher
-			$query->getQuerySettings()->setRespectSysLanguage(false);
-			$query->getQuerySettings()->setLanguageOverlayMode(true);
+//			$query->getQuerySettings()->setRespectSysLanguage(false);
+			$query->getQuerySettings()->setLanguageOverlayMode('hideNonTranslated');
 		}
 
 		return $matches;
