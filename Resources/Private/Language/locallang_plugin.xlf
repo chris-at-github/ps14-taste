@@ -58,6 +58,15 @@
 			<trans-unit id="flexform.field.titleType" resname="flexform.field.titleType">
 				<source>Title type</source>
 			</trans-unit>
+			<trans-unit id="flexform.field.subpagesLayout" resname="flexform.field.subpagesLayout">
+				<source>Subpages layout</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.subpagesLayout.default" resname="flexform.field.subpagesLayout.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="flexform.field.subpagesLayout.columns" resname="flexform.field.subpagesLayout.columns">
+				<source>Columns</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

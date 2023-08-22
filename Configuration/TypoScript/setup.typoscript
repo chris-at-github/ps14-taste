@@ -26,6 +26,7 @@ plugin.tx_teaser {
 
 	settings {
 		badgeParentCategories = {$plugin.tx_teaser.settings.badgeParentCategories}
+		subpagesLayout = default
 	}
 }
 
@@ -50,6 +51,11 @@ plugin.tx_xo.settings.modules {
 		asideAlignment {
 			left = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment.left
 			right = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment.right
+		}
+
+		subpagesLayout {
+			default = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout.default
+			columns = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout.columns
 		}
 
 		titleType {
@@ -114,5 +120,5 @@ module.tx_xo.settings.modules.teaser < plugin.tx_xo.settings.modules.teaser
 
 block.teaserSubNavigation < block.subNavigation
 block.teaserSubNavigation {
-	1.wrap = <nav class="navigation teaser--sub-navigation"><ul> | </ul></nav>
+	1.wrap = <ul>|</ul>
 }

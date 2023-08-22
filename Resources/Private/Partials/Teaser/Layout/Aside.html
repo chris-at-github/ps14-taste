@@ -104,7 +104,9 @@
 
 <f:section name="Subpages">
 	<f:if condition="{settings.subpagesEnabled}">
-		<f:cObject typoscriptObjectPath="block.teaserSubNavigation" data="{parent: page.uid}" />
+		<nav class="navigation teaser--sub-navigation teaser--sub-navigation-layout-{settings.subpagesLayout}">
+			<f:cObject typoscriptObjectPath="block.teaserSubNavigation" data="{parent: page.uid}" />
+		</nav>
 	</f:if>
 </f:section>
 </html>

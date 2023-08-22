@@ -177,6 +177,21 @@
 							</config>
 						</TCEforms>
 					</settings.subpagesEnabled>
+					<settings.subpagesLayout>
+						<TCEforms>
+							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout</label>
+							<displayCond>FIELD:main.settings.layout:=:aside</displayCond>
+							<config>
+								<type>select</type>
+								<renderType>selectSingle</renderType>
+								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcConfig>
+									<identifier>modules.teaser.subpagesLayout</identifier>
+									<extension>xo</extension>
+								</itemsProcConfig>
+							</config>
+						</TCEforms>
+					</settings.subpagesLayout>
 				</el>
 			</ROOT>
 		</main>
