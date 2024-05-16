@@ -35,21 +35,20 @@ plugin.tx_ps14teaser {
 
 	settings {
 		badgeParentCategories = {$plugin.tx_ps14teaser.settings.badgeParentCategories}
-		subpagesLayout = default
 
 		layouts {
-			default = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.default
-			aside = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
+			default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.default
+			aside = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
 		}
 
 		asideAlignment {
-			left = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment.left
-			right = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment.right
+			left = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.left
+			right = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.right
 		}
 
 		subpagesLayout {
-			default = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout.default
-			columns = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout.columns
+			default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.default
+			columns = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.columns
 		}
 
 		readmoreLimit = 3
@@ -112,10 +111,6 @@ plugin.tx_ps14teaser {
 #	}
 #	210 = Ps14\Teaser\DataProcessing\TeaserProcessor
 #}
-
-plugin.tx_ps14teaser.settings {
-
-}
 
 module.tx_ps14teaser.settings < plugin.tx_ps14teaser.settings
 

@@ -6,39 +6,39 @@
 		<main>
 			<ROOT>
 				<TCEforms>
-					<sheetTitle>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.sheet.main</sheetTitle>
+					<sheetTitle>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.sheet.main</sheetTitle>
 				</TCEforms>
 				<type>array</type>
 				<el>
 					<settings.layout>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
-									<identifier>modules.teaser.layouts</identifier>
-									<extension>xo</extension>
+									<extension>Ps14Teaser</extension>
+									<identifier>layouts</identifier>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
 					</settings.layout>
 					<settings.source>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.source</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.source</label>
 							<onChange>reload</onChange>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.categories</numIndex>
+										<numIndex index="0">LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.categories</numIndex>
 										<numIndex index="1">categories</numIndex>
 									</numIndex>
 									<numIndex index="2" type="array">
-										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</numIndex>
+										<numIndex index="0">LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</numIndex>
 										<numIndex index="1">pages</numIndex>
 									</numIndex>
 								</items>
@@ -47,7 +47,7 @@
 					</settings.source>
 					<settings.categories>
 						<TCEforms>
-							<label>LLL:EXT:entity_product/Resources/Private/Language/locallang_plugin.xlf:flexform.field.categories</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.categories</label>
 							<displayCond>FIELD:main.settings.source:=:categories</displayCond>
 							<config>
 								<type>select</type>
@@ -67,18 +67,18 @@
 					</settings.categories>
 					<settings.pagesProcessing>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pagesProcessing</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages-processing</label>
 							<displayCond>FIELD:main.settings.source:=:pages</displayCond>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
 								<items type="array">
 									<numIndex index="1" type="array">
-										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pagesProcessing.pages</numIndex>
+										<numIndex index="0">LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages-processing.pages</numIndex>
 										<numIndex index="1">pages</numIndex>
 									</numIndex>
 									<numIndex index="2" type="array">
-										<numIndex index="0">LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pagesProcessing.subpages</numIndex>
+										<numIndex index="0">LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages-processing.subpages</numIndex>
 										<numIndex index="1">subpages</numIndex>
 									</numIndex>
 								</items>
@@ -87,7 +87,7 @@
 					</settings.pagesProcessing>
 					<settings.pages>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.pages</label>
 							<displayCond>FIELD:main.settings.source:=:pages</displayCond>
 							<config>
 								<type>group</type>
@@ -100,38 +100,24 @@
 							</config>
 						</TCEforms>
 					</settings.pages>
-					<settings.titleType>
-						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.titleType</label>
-							<config>
-								<type>select</type>
-								<renderType>selectSingle</renderType>
-								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
-								<itemsProcConfig>
-									<identifier>modules.teaser.titleType</identifier>
-									<extension>xo</extension>
-								</itemsProcConfig>
-							</config>
-						</TCEforms>
-					</settings.titleType>
 					<settings.asideAlignment>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.asideAlignment</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment</label>
 							<displayCond>FIELD:main.settings.layout:=:aside</displayCond>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
-									<identifier>modules.teaser.asideAlignment</identifier>
-									<extension>xo</extension>
+									<extension>Ps14Teaser</extension>
+									<identifier>asideAlignment</identifier>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
 					</settings.asideAlignment>
 					<settings.readmoreEnabled>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.readmoreEnabled</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.readmore-enabled</label>
 							<config>
 								<type>check</type>
 								<default>1</default>
@@ -145,7 +131,7 @@
 					</settings.readmoreEnabled>
 					<settings.hiddenEnabled>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.hiddenEnabled</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.hidden-enabled</label>
 							<config>
 								<type>check</type>
 								<default>0</default>
@@ -159,7 +145,7 @@
 					</settings.hiddenEnabled>
 					<settings.subpagesEnabled>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesEnabled</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-enabled</label>
 							<displayCond>
 								<AND>
 									<numIndex index="0">FIELD:main.settings.layout:=:aside</numIndex>
@@ -179,15 +165,15 @@
 					</settings.subpagesEnabled>
 					<settings.subpagesLayout>
 						<TCEforms>
-							<label>LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout</label>
+							<label>LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout</label>
 							<displayCond>FIELD:main.settings.layout:=:aside</displayCond>
 							<config>
 								<type>select</type>
 								<renderType>selectSingle</renderType>
-								<itemsProcFunc>Ps\Xo\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
+								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
-									<identifier>modules.teaser.subpagesLayout</identifier>
-									<extension>xo</extension>
+									<extension>Ps14Teaser</extension>
+									<identifier>subpagesLayout</identifier>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>

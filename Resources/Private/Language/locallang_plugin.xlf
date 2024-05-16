@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2024-05-16T22:22:51Z" product-name="entity_product">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-05-16T22:00:00Z" product-name="teaser">
 		<header/>
 		<body>
 			<trans-unit id="teaser.title">
@@ -10,61 +10,58 @@
 				<source>Dynamic display of teasers based on pages</source>
 			</trans-unit>
 
-			<trans-unit id="flexform.field.layout" resname="flexform.field.layout">
+			<trans-unit id="flexform.field.layout">
 				<source>Layout</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.layout.default" resname="flexform.field.layout.default">
+			<trans-unit id="flexform.field.layout.default">
 				<source>Default</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.layout.aside" resname="flexform.field.layout.aside">
+			<trans-unit id="flexform.field.layout.aside">
 				<source>Media | Text</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.source" resname="flexform.field.source">
+			<trans-unit id="flexform.field.source">
 				<source>Source</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.categories" resname="flexform.field.categories">
+			<trans-unit id="flexform.field.categories">
 				<source>Categories</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.pages" resname="flexform.field.pages">
+			<trans-unit id="flexform.field.pages">
 				<source>Pages</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.readmoreEnabled" resname="flexform.field.readmoreEnabled">
+			<trans-unit id="flexform.field.readmore-enabled">
 				<source>Use load more</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.pagesProcessing" resname="flexform.field.pagesProcessing">
+			<trans-unit id="flexform.field.pages-processing">
 				<source>Processing selected pages</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.pagesProcessing.pages" resname="flexform.field.pagesProcessing.pages">
+			<trans-unit id="flexform.field.pages-processing.pages">
 				<source>Selected pages</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.pagesProcessing.subpages" resname="flexform.field.pagesProcessing.subpages">
+			<trans-unit id="flexform.field.pages-processing.subpages">
 				<source>Subpages of selected pages</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.hiddenEnabled" resname="flexform.field.hiddenEnabled">
+			<trans-unit id="flexform.field.hidden-enabled">
 				<source>Show hidden records</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.asideAlignment" resname="flexform.field.asideAlignment">
+			<trans-unit id="flexform.field.aside-alignment">
 				<source>Alignment</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.asideAlignment.left" resname="flexform.field.asideAlignment.left">
+			<trans-unit id="flexform.field.aside-alignment.left">
 				<source>Media | Text</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.asideAlignment.right" resname="flexform.field.asideAlignment.right">
+			<trans-unit id="flexform.field.aside-alignment.right">
 				<source>Text | Media</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.subpagesEnabled" resname="flexform.field.subpagesEnabled">
+			<trans-unit id="flexform.field.subpages-enabled">
 				<source>Show subpages</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.titleType" resname="flexform.field.titleType">
-				<source>Title type</source>
-			</trans-unit>
-			<trans-unit id="flexform.field.subpagesLayout" resname="flexform.field.subpagesLayout">
+			<trans-unit id="flexform.field.subpages-layout">
 				<source>Subpages layout</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.subpagesLayout.default" resname="flexform.field.subpagesLayout.default">
+			<trans-unit id="flexform.field.subpages-layout.default">
 				<source>Default</source>
 			</trans-unit>
-			<trans-unit id="flexform.field.subpagesLayout.columns" resname="flexform.field.subpagesLayout.columns">
+			<trans-unit id="flexform.field.subpages-layout.columns">
 				<source>Columns</source>
 			</trans-unit>
 		</body>
