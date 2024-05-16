@@ -2,14 +2,10 @@
 
 namespace Ps14\Teaser\DataProcessing;
 
-use Ps\EntityProduct\Domain\Model\Product;
-use Ps\EntityProduct\Domain\Repository\ProductRepository;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
-class TeaserProcessor extends \Ps\Xo\DataProcessing\ModuleProcessor implements DataProcessorInterface {
+class TeaserProcessor extends \Ps14\Foundation\DataProcessing\ModuleProcessor implements DataProcessorInterface {
 
 	/**
 	 * @param ContentObjectRenderer $contentObject The data of the content element or page

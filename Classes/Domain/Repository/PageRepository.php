@@ -6,14 +6,14 @@ use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 /**
  * The repository for the domain model Pages
  */
-class PageRepository extends \Ps\Xo\Domain\Repository\PageRepository {
+class PageRepository extends \Ps14\Foundation\Domain\Repository\PageRepository {
 
 	/**
 	 * override the storagePid settings (do not use storagePid) of extbase
 	 */
 	public function initializeObject() {
-		$this->defaultQuerySettings = $this->objectManager->get(Typo3QuerySettings::class);
-		$this->defaultQuerySettings->setRespectStoragePage(false);
+//		$this->defaultQuerySettings = $this->objectManager->get(Typo3QuerySettings::class);
+//		$this->defaultQuerySettings->setRespectStoragePage(false);
 	}
 
 	/**

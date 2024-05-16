@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Ps14\Teaser\Domain\Model;
 
 
-use Ps\Xo\Domain\Model\Category;
+use \Ps14\Foundation\Domain\Model\Category;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
@@ -22,7 +22,7 @@ use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 /**
  * Page
  */
-class Page extends \Ps\Xo\Domain\Model\Page {
+class Page extends \Ps14\Foundation\Domain\Model\Page {
 
 	/**
 	 * @var string

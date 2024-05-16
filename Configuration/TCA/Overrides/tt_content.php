@@ -5,9 +5,10 @@ if(defined('TYPO3') === false) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Teaser',
+	'Ps14Teaser',
 	'Frontend',
-	'LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:teaser.title'
+	'LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:teaser.title',
+	'ps14-module-teaser'
 );
 
 $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['ps14teaser_frontend'] = 'pi_flexform';
