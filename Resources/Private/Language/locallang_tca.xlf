@@ -3,10 +3,10 @@
 	<file source-language="en" datatype="plaintext" original="EXT:teaser/Resources/Private/Language/locallang_tca.xlf" date="2021-09-11T22:06:00Z" product-name="teaser">
 		<header/>
 		<body>
-			<trans-unit id="tx_teaser_domain_model_page.tx_teaser_abstract_long" resname="tx_teaser_domain_model_page.tx_teaser_abstract_long">
+			<trans-unit id="pages.teaser-abstract-long">
 				<source>Abstract Long</source>
 			</trans-unit>
-			<trans-unit id="tx_teaser_domain_model_page.tx_teaser_title" resname="tx_teaser_domain_model_page.tx_teaser_title">
+			<trans-unit id="pages.teaser-title">
 				<source>Title</source>
 			</trans-unit>
 		</body>

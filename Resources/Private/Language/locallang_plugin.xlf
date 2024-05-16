@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:entity_product/Resources/Private/Language/locallang_plugin" date="2020-11-22T22:22:51Z" product-name="entity_product">
+	<file source-language="en" datatype="plaintext" original="messages" date="2024-05-16T22:22:51Z" product-name="entity_product">
 		<header/>
 		<body>
-			<trans-unit id="tx_teaser_frontend.name">
-				<source>Teaser Frontend</source>
+			<trans-unit id="teaser.title">
+				<source>Ps14 Teaser</source>
 			</trans-unit>
-			<trans-unit id="tx_teaser_frontend.description">
-				<source></source>
+			<trans-unit id="teaser.description">
+				<source>Dynamic display of teasers based on pages</source>
 			</trans-unit>
 
 			<trans-unit id="flexform.field.layout" resname="flexform.field.layout">

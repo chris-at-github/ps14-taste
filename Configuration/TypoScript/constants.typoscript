@@ -1,15 +1,4 @@
-plugin.tx_teaser {
-	view {
-		# cat=plugin.tx_teaser/file; type=string; label=Path to template layouts (FE)
-		layoutRootPath = EXT:teaser/Resources/Private/Layouts/
-
-		# cat=plugin.tx_teaser/file; type=string; label=Path to template root (FE)
-		templateRootPath = EXT:teaser/Resources/Private/Templates/
-
-		# cat=plugin.tx_teaser/file; type=string; label=Path to template partials (FE)
-		partialRootPath = EXT:teaser/Resources/Private/Partials/
-	}
-
+plugin.tx_ps14teaser {
 	persistence {
 
 		# cat=plugin.tx_teaser//a; type=string; label=Default storage PID

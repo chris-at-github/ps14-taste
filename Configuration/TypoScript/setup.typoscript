@@ -1,48 +1,42 @@
-plugin.tx_teaser {
+plugin.tx_ps14teaser {
 	view {
-		layoutRootPaths.10 = EXT:teaser/Resources/Private/Layouts/
-		layoutRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Layouts/
+		layoutRootPaths {
+			10 = EXT:ps14_teaser/Resources/Private/Layouts/
+			20 = EXT:ps14_site/Resources/Private/Extensions/Teaser/Layouts/
+		}
 
-		templateRootPaths.10 = EXT:teaser/Resources/Private/Templates/
-		templateRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Templates/
+		templateRootPaths {
+			10 = EXT:ps14_teaser/Resources/Private/Templates/
+			20 = EXT:ps14_site/Resources/Private/Extensions/Teaser/Templates/
+		}
 
-		partialRootPaths.10 = EXT:teaser/Resources/Private/Partials/
-		partialRootPaths.14 = EXT:xo/Resources/Private/Extensions/FluidStyledContent/Partials/
-		partialRootPaths.15 = EXT:xo/Resources/Private/Extensions/Xo/Partials/
-		partialRootPaths.20 = EXT:xna/Resources/Private/Extensions/Teaser/Partials/
+		partialRootPaths {
+			10 = EXT:ps14_teaser/Resources/Private/Partials/
+			20 = EXT:ps14_site/Resources/Private/Extensions/Modulor/Partials/
+			30 = EXT:ps14_foundation/Resources/Private/Partials/
+			40 = EXT:ps14_site/Resources/Private/Partials/
+		}
 	}
+
 	persistence {
-		storagePid = {$plugin.tx_teaser.persistence.storagePid}
+		storagePid = {$plugin.tx_ps14teaser.persistence.storagePid}
 		#recursive = 1
 	}
+
 	features {
 		#skipDefaultArguments = 1
 		# if set to 1, the enable fields are ignored in BE context
 		ignoreAllEnableFieldsInBe = 0
 	}
+
 	mvc {
 		#callDefaultActionIfActionCantBeResolved = 1
 	}
 
 	settings {
-		badgeParentCategories = {$plugin.tx_teaser.settings.badgeParentCategories}
+		badgeParentCategories = {$plugin.tx_ps14teaser.settings.badgeParentCategories}
 		subpagesLayout = default
-	}
-}
 
-tt_content.list.dataProcessing {
-	200 {
-		teaser_frontend {
-			importCss {
-				10 = /assets/css/modules/teaser.css
-			}
-		}
-	}
-	210 = Ps14\Teaser\DataProcessing\TeaserProcessor
-}
-
-plugin.tx_xo.settings.modules {
-	teaser {
 		layouts {
 			default = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.default
 			aside = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
@@ -56,14 +50,6 @@ plugin.tx_xo.settings.modules {
 		subpagesLayout {
 			default = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout.default
 			columns = LLL:EXT:teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpagesLayout.columns
-		}
-
-		titleType {
-			0 = LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value
-			1 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.1
-			2 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.2
-			3 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.3
-			4 = LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_layout.I.4
 		}
 
 		readmoreLimit = 3
@@ -116,7 +102,22 @@ plugin.tx_xo.settings.modules {
 	}
 }
 
-module.tx_xo.settings.modules.teaser < plugin.tx_xo.settings.modules.teaser
+#tt_content.list.dataProcessing {
+#	200 {
+#		teaser_frontend {
+#			importCss {
+#				10 = /assets/css/modules/teaser.css
+#			}
+#		}
+#	}
+#	210 = Ps14\Teaser\DataProcessing\TeaserProcessor
+#}
+
+plugin.tx_ps14teaser.settings {
+
+}
+
+module.tx_ps14teaser.settings < plugin.tx_ps14teaser.settings
 
 block.teaserSubNavigation < block.subNavigation
 block.teaserSubNavigation {

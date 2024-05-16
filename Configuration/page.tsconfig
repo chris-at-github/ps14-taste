@@ -1,0 +1,16 @@
+mod {
+	wizards.newContentElement.wizardItems.plugins {
+		elements {
+			ps14teaser_frontend {
+				iconIdentifier = ps14-module-teaser
+				title = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:teaser.title
+				description = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:teaser.description
+				tt_content_defValues {
+					CType = list
+					list_type = ps14teaser_frontend
+				}
+			}
+		}
+		show = *
+	}
+}
