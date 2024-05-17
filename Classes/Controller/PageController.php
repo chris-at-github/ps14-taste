@@ -12,16 +12,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 /**
- * This file is part of the "Ps14 Teaser" Extension for TYPO3 CMS.
- *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * (c) 2021 Christian Pschorr <pschorr.christian@gmail.com>
- */
-
-
-/**
  * PageController
  */
 class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
@@ -36,6 +26,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 */
 	public function injectPageRepository(PageRepository $pageRepository) {
 		$this->pageRepository = $pageRepository;
+		$this->pageRepository->setQuerySettings(['respectStoragePage' => false]);
 	}
 
 	/**
@@ -78,14 +69,14 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	}
 
 	/**
-	 * @return null|void
+	 * @return \Psr\Http\Message\ResponseInterface
 	 */
 	public function indexAction() {
 		$demand = $this->getDemand();
-		$pages = $this->pageRepository->findAll($this->getDemand());
+		$pages = $this->pageRepository->findAllByOption($demand);
 
 		if($this->settings['source'] === 'pages' && $this->settings['pagesProcessing'] === 'pages') {
-			$pages = \Ps\Xo\Utilities\GeneralUtility::sortIterableByField($pages, $demand['records'], function($value) {
+			$pages = \Ps14\Foundation\Utilities\ArrayUtility::sortByField($pages, $demand['records'], function($value) {
 				if($value instanceof Page) {
 					return $value->getUid();
 				}
@@ -94,15 +85,9 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 			});
 		}
 
-		//DebuggerUtility::var_dump($pages);
-
-		$this->settings['xo'] = $this->objectManager->get(\TYPO3\CMS\Extbase\Configuration\ConfigurationManager::class)->getConfiguration(
-			\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
-			'xo'
-		);
-
 		$this->view->assign('pages', $pages);
-		$this->view->assign('settings', $this->settings);
-		$this->view->assign('record', $this->configurationManager->getContentObject()->data);
+		$this->view->assign('record', $this->request->getAttribute('currentContentObject')->data);
+
+		return $this->htmlResponse();
 	}
 }
