@@ -35,25 +35,8 @@ plugin.tx_ps14teaser {
 
 	settings {
 		badgeParentCategories = {$plugin.tx_ps14teaser.settings.badgeParentCategories}
-
-		layouts {
-			default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.default
-			aside = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
-		}
-
-		asideAlignment {
-			left = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.left
-			right = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.right
-		}
-
-		subpagesLayout {
-			default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.default
-			columns = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.columns
-		}
-
 		readmoreLimit = 3
-
-		pictureSettings {
+		media {
 			aside {
 				width = 720
 				cropVariant = desktop
@@ -98,6 +81,23 @@ plugin.tx_ps14teaser {
 				}
 			}
 		}
+
+		plugin {
+			layouts {
+				default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.default
+				aside = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.layout.aside
+			}
+
+			asideAlignment {
+				left = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.left
+				right = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.aside-alignment.right
+			}
+
+			subpagesLayout {
+				default = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.default
+				columns = LLL:EXT:ps14_teaser/Resources/Private/Language/locallang_plugin.xlf:flexform.field.subpages-layout.columns
+			}
+		}
 	}
 }
 
@@ -115,7 +115,19 @@ tt_content.list.dataProcessing {
 
 module.tx_ps14teaser.settings < plugin.tx_ps14teaser.settings
 
-block.teaserSubNavigation < block.subNavigation
+block.teaserSubNavigation = HMENU
 block.teaserSubNavigation {
-	1.wrap = <ul>|</ul>
+	special = directory
+	special.value.field = parent
+
+	1 = TMENU
+	1 {
+		wrap = <ul>|</ul>
+
+		NO {
+			wrapItemAndSub = <li>|</li>
+			ATagBeforeWrap = 1
+			linkWrap = <span>|</span>
+		}
+	}
 }

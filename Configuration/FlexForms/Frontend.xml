@@ -20,7 +20,7 @@
 								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<extension>Ps14Teaser</extension>
-									<identifier>layouts</identifier>
+									<identifier>plugin.layouts</identifier>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
@@ -110,7 +110,7 @@
 								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<extension>Ps14Teaser</extension>
-									<identifier>asideAlignment</identifier>
+									<identifier>plugin.asideAlignment</identifier>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
@@ -173,7 +173,7 @@
 								<itemsProcFunc>Ps14\Foundation\Service\TcaService->getItemsBySettingsIdentifier</itemsProcFunc>
 								<itemsProcConfig>
 									<extension>Ps14Teaser</extension>
-									<identifier>subpagesLayout</identifier>
+									<identifier>plugin.subpagesLayout</identifier>
 								</itemsProcConfig>
 							</config>
 						</TCEforms>
