@@ -2,6 +2,7 @@
 
 namespace Ps14\Teaser\DataProcessing;
 
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\ContentObject\DataProcessorInterface;
 
@@ -15,8 +16,7 @@ class TeaserProcessor extends \Ps14\Foundation\DataProcessing\ModuleProcessor im
 	 * @return array the processed data as key/value store
 	 */
 	public function process(ContentObjectRenderer $contentObject, array $contentObjectConfiguration, array $processorConfiguration, array $processedData) {
-
-		if($processedData['data']['list_type'] !== 'teaser_frontend') {
+		if($processedData['data']['list_type'] !== 'ps14teaser_frontend') {
 			return parent::process($contentObject, $contentObjectConfiguration, $processorConfiguration, $processedData);
 		}
 

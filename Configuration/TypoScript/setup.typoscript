@@ -101,7 +101,7 @@ plugin.tx_ps14teaser {
 	}
 }
 
-#tt_content.list.dataProcessing {
+tt_content.list.dataProcessing {
 #	200 {
 #		teaser_frontend {
 #			importCss {
@@ -109,8 +109,9 @@ plugin.tx_ps14teaser {
 #			}
 #		}
 #	}
-#	210 = Ps14\Teaser\DataProcessing\TeaserProcessor
-#}
+
+	210 = Ps14\Teaser\DataProcessing\TeaserProcessor
+}
 
 module.tx_ps14teaser.settings < plugin.tx_ps14teaser.settings
 
