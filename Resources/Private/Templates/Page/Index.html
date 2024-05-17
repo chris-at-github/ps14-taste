@@ -1,4 +1,4 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:fo="http://typo3.org/ns/Ps14/Foundation/ViewHelpers" data-namespace-typo3-fluid="true">
 	<f:layout name="Default" />
 
 	<f:section name="Header">
@@ -6,6 +6,9 @@
 	</f:section>
 
 	<f:section name="Main">
-		<f:render partial="Teaser/Layout/{settings.layout -> xo:format.ucFirst()}" section="Main" arguments="{_all}" />
+		<f:render partial="Teaser/Layout/{settings.layout -> fo:format.pascalCase()}" section="Main" optional="1" arguments="{
+			pages: pages,
+			settings: '{fo:settings.get(extension: \'Ps14Teaser\')}'
+		}" />
 	</f:section>
 </html>
