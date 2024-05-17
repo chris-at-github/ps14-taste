@@ -34,6 +34,7 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 	 * @return array
 	 */
 	protected function getDemand($overwrite = []) {
+		$record = $this->request->getAttribute('currentContentObject')->data;
 		$options = [
 			'not' => []
 		];
@@ -45,12 +46,12 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 			} else {
 				$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
 			}
-		} elseif($this->settings['source'] === 'categories' && empty($this->configurationManager->getContentObject()->data['pages']) === false) {
-			$depth = (int) $this->configurationManager->getContentObject()->data['recursive'];
-			$queryGenerator = GeneralUtility::makeInstance( QueryGeneratorAlias::class);
+		} elseif($this->settings['source'] === 'categories' && empty($record['pages']) === false) {
+			$depth = (int) $record['recursive'];
 
-			$children = $queryGenerator->getTreeList($this->configurationManager->getContentObject()->data['pages'], $depth, 0, 1);
-			$options['parent'] = GeneralUtility::intExplode(',', $children, true);
+			/** @var \TYPO3\CMS\Core\Domain\Repository\PageRepository $corePageRepository */
+			$corePageRepository = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Domain\Repository\PageRepository::class);
+			$options['parent'] = $corePageRepository->getPageIdsRecursive(GeneralUtility::intExplode(',', $record['pages']), $depth);
 		}
 
 		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
