@@ -1,8 +1,7 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:fo="http://typo3.org/ns/Ps14/Foundation/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 <f:section name="Main">
-
-	<f:if condition="{pages -> f:count()} > {settings.xo.modules.teaser.readmoreLimit} && {settings.readmoreEnabled} != 0">
+	<f:if condition="{pages -> f:count()} > {settings.readmoreLimit} && {settings.readmoreEnabled} != 0">
 		<f:then>
 			<f:render section="ReadmoreContainer" arguments="{_all}" />
 		</f:then>
@@ -10,16 +9,15 @@
 			<f:render section="CardContainer" arguments="{_all}" />
 		</f:else>
 	</f:if>
-
 </f:section>
 
 <f:section name="ReadmoreContainer">
 	<div class="readmore-container">
 		<div class="readmore-container--collapse">
-			<f:render section="CardContainer" arguments="{pages: pages, settings: settings, additionalClass: 'readmore-container--body'}" />
+			<f:render section="CardContainer" arguments="{pages: pages, record: record, settings: settings, additionalClass: 'readmore-container--body'}" />
 		</div>
 		<div class="readmore-container--toggle">
-			<button class="button"><xo:svg.use name="readmore" viewBox="0 0 24 15" /><f:translate key="LLL:EXT:xo/Resources/Private/Language/locallang_frontend.xlf:tx_xo.action.loadmore" /></button>
+			<button class="button"><fo:svg.inline source="assets/svg/readmore.svg" /><f:translate key="LLL:EXT:ps14_foundation/Resources/Private/Language/locallang_frontend.xlf:action.loadmore" /></button>
 		</div>
 	</div>
 </f:section>
@@ -28,18 +26,18 @@
 	<ul class="card--container {additionalClass}">
 		<f:for each="{pages}" as="page">
 			<li class="card card--layout-1" data-uri-target="{f:uri.page(pageUid: page.uid)}">
-				<f:render section="Item" arguments="{page: page, settings: settings}" />
+				<f:render section="Item" arguments="{page: page, record: record, settings: settings}" />
 			</li>
 		</f:for>
 	</ul>
 </f:section>
 
 <f:section name="Item">
-	<f:render partial="Components/Card" section="Media" arguments="{media: page.media, settings: settings.xo.modules.teaser.pictureSettings.card}" />
+	<f:render partial="Components/Card" section="Media" arguments="{media: page.media, settings: settings.pictureSettings.card}" />
 	<f:render partial="Components/Card" section="Badges" arguments="{badges: page.badges}" />
 
 	<div class="card--body">
-		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, titleType: settings.titleType, link: '{f:uri.page(pageUid: page.uid)}'}" />
+		<f:render partial="Components/Card" section="Title" arguments="{title: page.teaserTitle, titleType: record.tx_foundation_elements_header, link: '{f:uri.page(pageUid: page.uid)}'}" />
 
 		<f:if condition="{page.abstract}">
 			<f:render partial="Components/Card" section="Description" arguments="{description: page.abstract}" />
