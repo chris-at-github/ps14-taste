@@ -12,7 +12,7 @@ plugin.tx_ps14teaser {
 
 		partialRootPaths {
 			10 = EXT:ps14_teaser/Resources/Private/Partials/
-			20 = EXT:ps14_site/Resources/Private/Extensions/Modulor/Partials/
+			20 = EXT:ps14_site/Resources/Private/Extensions/Teaser/Partials/
 			30 = EXT:ps14_foundation/Resources/Private/Partials/
 			40 = EXT:ps14_site/Resources/Private/Partials/
 		}
