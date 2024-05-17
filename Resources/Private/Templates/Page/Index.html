@@ -8,6 +8,7 @@
 	<f:section name="Main">
 		<f:render partial="Teaser/Layout/{settings.layout -> fo:format.pascalCase()}" section="Main" optional="1" arguments="{
 			pages: pages,
+			record: record,
 			settings: '{fo:settings.get(extension: \'Ps14Teaser\')}'
 		}" />
 	</f:section>
