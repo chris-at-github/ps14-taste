@@ -85,7 +85,7 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	public function getSettings() {
 		return GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Configuration\ConfigurationManager::class)->getConfiguration(
 			\TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
-			'teaser'
+			'Ps14Teaser'
 		);
 	}
 
