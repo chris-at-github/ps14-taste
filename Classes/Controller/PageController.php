@@ -40,18 +40,26 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		];
 
 		if($this->settings['source'] === 'pages' && empty($this->settings['pages']) === false) {
+
 			if($this->settings['pagesProcessing'] === 'subpages') {
 				$options['parent'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
 
 			} else {
 				$options['records'] = GeneralUtility::trimExplode(',', $this->settings['pages'], true);
+
+				// bei Eingabe von festen IDs duerfen nur die IDs der Hauptsprache verwendet werden, Extbase kuemmert sich per
+				// Overlay um die korrekte Uebersetzung
+				$this->pageRepository->setQuerySettings(['respectSysLanguage' => false]);
 			}
 		} elseif($this->settings['source'] === 'categories' && empty($record['pages']) === false) {
-			$depth = (int) $record['recursive'];
+
+			// sonst wuerde TYPO3 die deutsche und die englische Variante doppelt ausspielen
+			// so werden direkt die englischen Datensaetze geladen
+			$this->pageRepository->setQuerySettings(['respectSysLanguage' => true]);
 
 			/** @var \TYPO3\CMS\Core\Domain\Repository\PageRepository $corePageRepository */
 			$corePageRepository = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Domain\Repository\PageRepository::class);
-			$options['parent'] = $corePageRepository->getPageIdsRecursive(GeneralUtility::intExplode(',', $record['pages']), $depth);
+			$options['parent'] = $corePageRepository->getPageIdsRecursive(GeneralUtility::intExplode(',', $record['pages']), (int) $record['recursive']);
 		}
 
 		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
