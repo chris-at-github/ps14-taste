@@ -8,6 +8,6 @@ plugin.tx_ps14teaser {
 	settings {
 
 		# cat=plugin.tx_teaser//a; type=string; label=UIDs of parent categories for badges (categories)
-		badgeParentCategories = 5
+		badgeParentCategories = 141, 157, 145, 149, 166, 162
 	}
 }

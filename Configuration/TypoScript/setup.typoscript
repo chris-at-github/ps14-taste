@@ -36,6 +36,7 @@ plugin.tx_ps14teaser {
 	settings {
 		badgeParentCategories = {$plugin.tx_ps14teaser.settings.badgeParentCategories}
 		readmoreLimit = 3
+
 		media {
 			aside {
 				width = 720
