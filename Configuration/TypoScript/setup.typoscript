@@ -43,12 +43,12 @@ plugin.tx_ps14teaser {
 				cropVariant = desktop
 				mediaQueries {
 					992 {
-						width = 460
+						width = 560
 						cropVariant = desktop
 						mediaQuery = (min-width: 992px)
 					}
 					768 {
-						width = 372
+						width = 450
 						cropVariant = desktop
 						mediaQuery = (min-width: 768px)
 					}
