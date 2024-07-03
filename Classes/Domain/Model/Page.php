@@ -106,4 +106,15 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	public function setTeaserTitle(string $teaserTitle): void {
 		$this->teaserTitle = $teaserTitle;
 	}
+
+	/**
+	 * @return boolean
+	 */
+	public function isLinkable(): bool {
+		if($this->isNotLinked() === true) {
+			return false;
+		}
+
+		return true;
+	}
 }
