@@ -63,6 +63,11 @@ class PageController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController 
 		}
 
 		if($this->settings['source'] === 'categories' && empty($this->settings['categories']) === false) {
+
+			// sonst wuerde TYPO3 die deutsche und die englische Variante doppelt ausspielen
+			// so werden direkt die englischen Datensaetze geladen
+			$this->pageRepository->setQuerySettings(['respectSysLanguage' => true]);
+
 			$options['categories'] = GeneralUtility::trimExplode(',', $this->settings['categories'], true);
 		}
 
