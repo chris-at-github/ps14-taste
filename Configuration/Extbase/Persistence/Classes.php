@@ -11,6 +11,9 @@ return [
 			'teaserTitle' => [
 				'fieldName' => 'tx_teaser_title'
 			],
+			'teaserReadmore' => [
+				'fieldName' => 'tx_teaser_readmore'
+			],
 		]
 	],
 ];

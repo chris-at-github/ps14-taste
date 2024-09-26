@@ -35,6 +35,11 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	protected $teaserTitle = '';
 
 	/**
+	 * @var string
+	 */
+	protected $teaserReadmore = '';
+
+	/**
 	 * @var array
 	 */
 	protected $badges = [];
@@ -116,5 +121,17 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 		}
 
 		return true;
+	}
+
+	public function getTeaserReadmore(): string {
+		if(empty($this->teaserReadmore) === false) {
+			return $this->teaserReadmore;
+		}
+
+		return $this->getTeaserTitle();
+	}
+
+	public function setTeaserReadmore(string $teaserReadmore): void {
+		$this->teaserReadmore = $teaserReadmore;
 	}
 }

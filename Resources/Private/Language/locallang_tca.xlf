@@ -9,6 +9,9 @@
 			<trans-unit id="pages.teaser-title">
 				<source>Title</source>
 			</trans-unit>
+			<trans-unit id="pages.teaser-readmore">
+				<source>Readmore</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
