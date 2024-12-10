@@ -14,6 +14,9 @@ return [
 			'teaserReadmore' => [
 				'fieldName' => 'tx_teaser_readmore'
 			],
+			'teaserMediaLarge' => [
+				'fieldName' => 'tx_teaser_media_large'
+			],
 		]
 	],
 ];

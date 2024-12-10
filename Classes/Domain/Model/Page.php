@@ -45,6 +45,12 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 	protected $badges = [];
 
 	/**
+	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+	 */
+	protected $teaserMediaLarge = null;
+
+	/**
 	 * Returns the abstractLong
 	 *
 	 * @return string $abstractLong
@@ -133,5 +139,17 @@ class Page extends \Ps14\Foundation\Domain\Model\Page {
 
 	public function setTeaserReadmore(string $teaserReadmore): void {
 		$this->teaserReadmore = $teaserReadmore;
+	}
+
+	public function getTeaserMediaLarge(): ?\TYPO3\CMS\Extbase\Domain\Model\FileReference {
+		if($this->teaserMediaLarge === null) {
+			return $this->getMedia();
+		}
+
+		return $this->teaserMediaLarge;
+	}
+
+	public function setTeaserMediaLarge(?\TYPO3\CMS\Extbase\Domain\Model\FileReference $teaserMediaLarge): void {
+		$this->teaserMediaLarge = $teaserMediaLarge;
 	}
 }

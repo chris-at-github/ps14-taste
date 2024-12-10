@@ -12,6 +12,9 @@
 			<trans-unit id="pages.teaser-readmore">
 				<source>Readmore</source>
 			</trans-unit>
+			<trans-unit id="pages.teaser-media-large">
+				<source>Thumbnail Large</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
