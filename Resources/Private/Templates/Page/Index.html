@@ -6,10 +6,21 @@
 	</f:section>
 
 	<f:section name="Main">
-		<f:render partial="Teaser/Layout/{settings.layout -> fo:format.pascalCase()}" section="Main" optional="1" arguments="{
-			pages: pages,
-			record: record,
-			settings: '{fo:settings.get(extension: \'Ps14Teaser\')}'
-		}" />
+		<f:if condition="{record.tx_foundation_variant} == 1">
+			<f:then>
+				<f:render partial="Teaser/Layout/Technology" section="Main" optional="1" arguments="{
+					pages: pages,
+					record: record,
+					settings: '{fo:settings.get(extension: \'Ps14Teaser\')}'
+				}" />
+			</f:then>
+			<f:else>
+				<f:render partial="Teaser/Layout/{settings.layout -> fo:format.pascalCase()}" section="Main" optional="1" arguments="{
+					pages: pages,
+					record: record,
+					settings: '{fo:settings.get(extension: \'Ps14Teaser\')}'
+				}" />
+			</f:else>
+		</f:if>
 	</f:section>
 </html>
